@@ -1,0 +1,112 @@
+"set t_Co=256
+"set encoding=utf-8
+colorscheme desert
+
+set cindent
+set shiftwidth=2
+set cinoptions+=L0
+"set cinoptions+=g0
+
+set expandtab
+set tabstop=2
+set softtabstop=2
+set smarttab
+set nowrap
+
+set showcmd
+
+set relativenumber
+set number
+
+set incsearch
+
+set wildmenu
+
+filetype plugin indent on
+syntax on
+
+set autochdir
+nmap ; :
+
+set list
+set listchars=trail:·,eol:¬,nbsp:_
+
+set ignorecase
+set smartcase
+
+inoremap <expr> <enter> getline('.') =~ '^\s*//' ? '<enter><esc>S' : '<enter>'
+
+"Remove continue comment with o/O
+nnoremap <expr> O getline('.') =~ '^\s*//' ? 'O<esc>S' : 'O'
+nnoremap <expr> o getline('.') =~ '^\s*//' ? 'o<esc>S' : 'o'
+
+"Map split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+if bufwinnr(1)
+  nnoremap mk :resize +1<CR>
+  nnoremap mj :resize -1<CR>
+  nnoremap ml :vertical resize +1<CR>
+  nnoremap mh :vertical resize -1<CR>
+endif
+
+nnoremap mH :vertical new<CR>
+nnoremap mL :rightbelow vertical new<CR>
+nnoremap mJ :below split<CR>
+nnoremap mK :above split<CR>
+
+
+nnoremap <Tab> :bn!<CR>
+nnoremap <S-Tab> :bp!<CR>
+
+nnoremap mq :q!<CR>
+nnoremap mw :BD!<CR>
+nnoremap me :bd!<CR>
+
+
+nnoremap mr :source ~/.vim/vimrc<CR>
+
+"nerdtree
+map <silent> <C-n> :NERDTreeToggle<CR>
+
+"Vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'qpkorr/vim-bufkill'
+
+Plugin 'leafgarland/typescript-vim'
+Plugin 'pangloss/vim-javascript'
+
+call vundle#end()
+filetype plugin indent on
+
+"vim-airline
+set laststatus=2
+
+"let g:airline_theme='wombat'
+"let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+"if !exists('g:airline_symbols')
+"  let g:airline_symbols = {}
+"endif
+
+" powerline symbols
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = ''
