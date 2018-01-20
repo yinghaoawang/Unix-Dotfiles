@@ -4,14 +4,12 @@ install the dotfiles and to update the repo.
 
 ## Getting started
 #### Install the dotfiles to your current setup
-<aside class="notice">
-Doing so will override your current dotfiles. Be sure to back up your files if you're not sure about installing.
-</aside>
+Warning: Doing so will override your current dotfiles. Be sure to back up your files if you're not sure about installing.
 ```
-./push.sh
+sudo ./install.sh
 ```
 
 #### Update the repo with your current setup
-````
-./pull.sh
+```
+sudo ./pull.sh
 ```
