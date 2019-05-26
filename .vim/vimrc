@@ -84,6 +84,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
 Plugin 'qpkorr/vim-bufkill'
+Plugin 'mattn/emmet-vim'
 
 let g:typescript_indent_disable = 1
 Plugin 'leafgarland/typescript-vim'
