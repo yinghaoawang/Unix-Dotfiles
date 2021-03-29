@@ -1,8 +1,3 @@
-if [ "$EUID" -ne 0 ]
-then echo "Please run as root"
-    exit
-fi
-
 rm -rf ~/.vim
 rm -f ~/vimrc
 cp -r .vim ~

@@ -6,8 +6,10 @@ install the dotfiles and to update the repo.
 #### Install the dotfiles to your current setup
 Warning: Doing so will override your current dotfiles. Be sure to back up your files if you're not sure about installing.
 ```
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 sudo ./install.sh
 ```
+If don't have sudo, edit the .sh file to remove the if statement
 
 #### Update the repo with your current setup
 ```
