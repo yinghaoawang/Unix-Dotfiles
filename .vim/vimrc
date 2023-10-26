@@ -31,7 +31,7 @@ set autochdir
 nmap ; :
 
 set list
-set listchars=trail:·,eol:¬,nbsp:_
+set listchars=nbsp:×,tab:\ \ ,trail:\ ,
 
 set ignorecase
 set smartcase
