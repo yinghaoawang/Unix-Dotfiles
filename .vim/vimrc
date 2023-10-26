@@ -1,13 +1,12 @@
 set timeoutlen=1000 ttimeoutlen=0
 
-"set t_Co=256
-"set encoding=utf-8
-colorscheme desert
+set t_Co=256
+set encoding=utf-8
+colorscheme default
 
 set cindent
 set shiftwidth=4
 set cinoptions+=L0
-"set cinoptions+=g0
 
 set expandtab
 set tabstop=4
@@ -32,6 +31,7 @@ nmap ; :
 
 set list
 set listchars=nbsp:×,tab:\ \ ,trail:\ ,
+
 
 set ignorecase
 set smartcase
@@ -82,9 +82,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'qpkorr/vim-bufkill'
-"Plugin 'mattn/emmet-vim'
 Plugin 'mustache/vim-mustache-handlebars'
 
 let g:typescript_indent_disable = 1
@@ -97,28 +96,30 @@ Plugin 'digitaltoad/vim-pug'
 call vundle#end()
 filetype plugin indent on
 
-"emmet
-"let g:user_emmet_leader_key=','
-"let g:user_emmet_mode='a'
-
 "vim-airline
 set laststatus=2
 
-"let g:airline_theme='wombat'
-"let g:airline_powerline_fonts=1
+let g:airline_theme='wombat'
+let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#formatter = 'jsformatter'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
-"if !exists('g:airline_symbols')
-"  let g:airline_symbols = {}
-"endif
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
 
-" powerline symbols
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
-"let g:airline_symbols.branch = ''
-"let g:airline_symbols.readonly = ''
-"let g:airline_symbols.linenr = ''
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '>>'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '<<'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '->'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
